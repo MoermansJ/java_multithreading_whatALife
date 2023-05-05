@@ -1,6 +1,6 @@
 package be.intecbrussel;
 
-public class HeartBeat implements Runnable {
+public class HeartBeat extends Person implements Runnable {
     //properties
     private int milliSecondsBetweenBeats;
 
@@ -17,10 +17,11 @@ public class HeartBeat implements Runnable {
         while (true) {
             try {
                 System.out.println("__/\\_/\\__");
-                Thread.currentThread().wait(milliSecondsBetweenBeats);
+                Thread.sleep(milliSecondsBetweenBeats);
             } catch (InterruptedException e) {
                 System.out.println("Check run() in HeartBeat");
                 e.printStackTrace();
+                break;
             }
         }
     }

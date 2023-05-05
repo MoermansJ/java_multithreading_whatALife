@@ -6,7 +6,9 @@ public class Lungs extends Person implements Runnable {
 
 
     //constructors
+    public Lungs() {
 
+    }
 
     //custom methods
     @Override
@@ -15,10 +17,11 @@ public class Lungs extends Person implements Runnable {
             try {
                 System.out.println(lungsFull ? "Breathe out" : "Breathe in");
                 lungsFull = !lungsFull;
-                Thread.currentThread().wait(1000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 System.out.println("Check run() in Lungs");
                 e.printStackTrace();
+                break;
             }
         }
     }
