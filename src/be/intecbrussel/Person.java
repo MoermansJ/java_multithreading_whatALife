@@ -28,19 +28,24 @@ public class Person implements Runnable {
     //custom methods
     public void startLife() {
         this.life.start();
+
+        this.heart.setDaemon(true);
         this.heart.start();
+
+        this.breathing.setDaemon(true);
         this.breathing.start();
     }
 
     public void endLife() {
         this.life.interrupt();
-        this.heart.interrupt();
-        this.breathing.interrupt();
+//        this.heart.interrupt();
+//        this.breathing.interrupt();
     }
 
     @Override
     public void run() {
         Random random = new Random();
+
         for (int i = this.age; i < 100; i++) {
             try {
                 int myran = random.nextInt(21);

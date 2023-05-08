@@ -21,7 +21,7 @@ public class HeartBeat extends Person implements Runnable {
             } catch (InterruptedException e) {
                 System.out.println("Check run() in HeartBeat");
                 e.printStackTrace();
-                break;
+//                break;
             }
         }
     }

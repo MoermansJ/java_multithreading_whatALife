@@ -21,7 +21,7 @@ public class Lungs extends Person implements Runnable {
             } catch (InterruptedException e) {
                 System.out.println("Check run() in Lungs");
                 e.printStackTrace();
-                break;
+//                break;
             }
         }
     }
